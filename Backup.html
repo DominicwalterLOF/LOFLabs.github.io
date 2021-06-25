@@ -1,4 +1,4 @@
- <!DOCTYPE html>
+<!DOCTYPE html>
 
 <html>
 
@@ -12,7 +12,6 @@
 
 <script src="https://apis.google.com/js/platform.js" async defer></script>
 
-<link rel="stylesheet" href="./style.css">
 <style>
 
 body {
@@ -33,10 +32,8 @@ h2{
 .footer {
    position: fixed;
    left: 0;
-   right: 0;
    bottom: 0;
    width: 100%;
-   width: 50%;
    background-color: black;
    color: white;
    text-align: center;
@@ -153,11 +150,9 @@ img {
 
 
 
-<div style="width: 80%">
 
 
 <div class="card">
-<div class="card1" data-tilt data-tilt-scale="0.95" data-tilt-startY="40">
 
   <div id = "i"><img style="width:150px" src = 'https://iconsplace.com/wp-content/uploads/_icons/ff0000/256/png/error-icon-14-256.png'></div>
 
@@ -177,6 +172,7 @@ img {
 <center>
 <div style="display : flex; flex-direction : row; width: 100%;">
 <div class = "center"><img id = "imgg" class="avatar"></img></div>
+<div>
 <div style="width: 100%;">
 <p id = "info" style = "color: black;"></p>
 
@@ -230,23 +226,10 @@ img {
 </div>
 
 </center>
-</div>
 
 </center>
 
-<div class="footer">
-  <p style="font-size: 11px;">Site hosted and Maintained by Techinical team, Bandipur house</p>
-  <p style="font-size: 9px;">Site hosted and Maintained by Techinical team, Bandipur house</p>
-</div>
-
 <script src="https://www.gstatic.com/firebasejs/8.6.8/firebase.js"></script>
-
-<script src='https://cdnjs.cloudflare.com/ajax/libs/vanilla-tilt/1.7.0/vanilla-tilt.min.js'></script>
-
-
-
-
-
 
 <script>
 
@@ -317,6 +300,7 @@ function onSignIn(googleUser) {
 
       if(snapshot.val() == null || snapshot.val() == "null"){
 
+        window.alert("Sorry, you cannot access this portal, Either because you don't belong to Bandipur House or you have been banned from using the portal... ");
         window.alert("Sorry, you cannot access this portal, Either you don't belong to Bandipur House or banned from using the portal. Please contact WebAdmin for more information. ");
 
         }
@@ -328,6 +312,7 @@ function onSignIn(googleUser) {
           
           flag = "t";
       
+          document.getElementById('info1').innerHTML = "You Belong to group : <b>" + snapshot.val() + "</b>";
           document.getElementById('info1').innerHTML = "Group : <b>" + snapshot.val() + "</b>";
 
           document.getElementById('g').innerHTML = "In case you haven't connected with the Group Leader of " + snapshot.val() + " please contact the WebAdmin at " ;
