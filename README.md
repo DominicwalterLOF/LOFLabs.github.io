@@ -1,0 +1,3 @@
+# Welcome to LOF Lab's Site Repository
+
+This site is still under construction, some may not work as expected...
